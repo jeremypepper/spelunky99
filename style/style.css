@@ -1,0 +1,30 @@
+body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+#xanastare {
+    background: url(img/xanastare.png);
+    background-repeat: repeat;
+    width: 80vw;
+    
+}
+#logo {
+    
+    background: url(img/s99logo1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80vw;
+    height: 80vh;
+}
+img {
+    margin-top: 40px;
+    width: 80vw;
+}
+#soon {
+    font-size: 75px;
+}
