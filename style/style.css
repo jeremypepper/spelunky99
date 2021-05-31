@@ -23,7 +23,10 @@ body {
 }
 img {
     margin-top: 40px;
-    width: 80vw;
+    max-width: 80vw;
+    max-height: 40vh;
+    width: auto;
+    height: auto;
 }
 #soon {
     font-size: 75px;
