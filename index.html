@@ -33,10 +33,21 @@
             font-size: 75px;
         }
     </style>
+    
 </head>
 <body>
     <!-- <div id=logo></div> -->
     <img src="img/s99logo2.png"/>
     <div id=soon>COMING SOON</div>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/W2R4pLzVQhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="currentplayers"></div>
+    <script>
+        fetch("https://w5addyotsd.execute-api.us-west-2.amazonaws.com/prod4")
+        .then(response => response.json())
+        .then(data => {
+            var currentPlayerCount = data.data.Messages.length
+            document.getElementById("currentplayers").innerText = currentPlayerCount + "player(s) online"
+            document.getElementById("currentplayers").innerText = "Players online: " + data.data.Messages.map(m => m.From + "(" + m.World +"-" + m.Sublevel + ")").join(",")
+        })
+    </script>
 </body>
