@@ -31,3 +31,15 @@ img {
 #soon {
     font-size: 75px;
 }
+.tables {
+    display: flex;
+}
+
+table {
+    border: 1px solid #777;
+    min-width: 300px;
+    margin: 15px;
+}
+header {
+    text-align: center;
+}

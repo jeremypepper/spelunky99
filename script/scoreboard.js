@@ -49,3 +49,41 @@ function updateTable() {
 }
 updateTable()
 window.setInterval(updateTable, 10 * 1000);
+
+
+
+// wins table
+const templatePlayerWinsRow = _.template(
+    `
+        <tr>
+            <td class="playercell"><%- playerName.S %></td>
+            <td><%- wins.N %></td>
+        </tr>
+    `
+);
+const templateWinsTable = _.template(
+    `
+        <table>
+            <thead>
+                <tr>
+                    <th class="playercell">Player</th>
+                    <th>Wins</th>
+                </tr>
+            <thead>
+            <tbody>
+                <%= Body %>
+            </tbody>
+        </table>
+    `
+)
+function updateWinnersTable() {
+    fetch("https://adziycx6i0.execute-api.us-west-2.amazonaws.com/v2")
+    .then(response => response.json())
+    .then(data => {
+        const rows = _.map(data.data.Items, m => templatePlayerWinsRow(m))
+        const table = templateWinsTable({Body:rows.join('\n')})
+        document.getElementById("topplayers").innerHTML = table
+    })
+
+}
+updateWinnersTable()

@@ -8,8 +8,19 @@
 <body>
     <!-- <div id=logo></div> -->
     <img src="img/s99logo2.png"/>
-    <div id="playercount"></div>
-    <div id="currentplayers"></div>
+    <section class="tables">
+        <section class="current-table">
+            <header>Current <span id="playercount"></span>
+            </header>            
+            <div id="currentplayers"></div>
+        </section>
+        <section class="top-table">
+            <header>Top Players</header>
+            <div id="topplayers"></div>
+        </section>
+    </section>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
     <script src="script/scoreboard.js"></script>
 </body>
