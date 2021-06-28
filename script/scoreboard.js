@@ -80,7 +80,9 @@ function updateWinnersTable() {
     fetch("https://adziycx6i0.execute-api.us-west-2.amazonaws.com/v2")
     .then(response => response.json())
     .then(data => {
-        const players = _(data.data.Items).map(p=>p).sortBy(p=>p.wins.N).reverse().valueOf();
+        const players = _(data.data.Items).map(p=>p)
+            .sortBy(p=>parseInt(p.wins.N, 10))
+            .reverse().valueOf();
         const rows = _.map(players, m => templatePlayerWinsRow(m))
         const table = templateWinsTable({Body:rows.join('\n')})
         document.getElementById("topplayers").innerHTML = table
